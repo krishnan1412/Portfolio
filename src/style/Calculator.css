@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    /* background-color: rgb(11, 11, 97); */
+}
+
+@keyframes jump {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+@keyframes run {
+    0% {transform: translateX(-500px);}
+    15% {transform: translateX(-300px);}
+    30% {transform: translateX(-250px);}
+    45% {transform: translateX(-200px);}
+    60% {transform: translateX(-150px);}
+    75% {transform: translateX(-100px);}
+    90% {transform: translateX(-50px);}
+    100% {transform: translateX(0);}
+}
+@keyframes falldown {
+    0% {transform: translateY(-100px);}
+    25% {transform: translateY(-50px);}
+    50% {transform: translateY(-0px);}
+    75% {transform: translateY(10px);}
+    100% {transform: translateY(0px);}
+}
+
+h1 {
+    animation: falldown 2s 1s ease-out;
+    color: rgb(11, 11, 97);
+    text-align: center;
+}
+
+.fullDiv {
+    background-image: url(/images/calculator.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+.calculator {
+    position: relative;
+    animation: run .5s ease-in-out;
+    top: 100px;
+    width: 300px;
+    margin:  auto;
+    margin-bottom: 100px;
+    padding: 10px;
+    border-radius: 10px;
+   
+}
+
+.displayValue {
+    font-size: 24px;
+    margin-bottom: 10px;
+    width: 280px;
+    height: 50px;
+    justify-content: center;
+    text-align: end;
+    background-color: rgb(50, 50, 50);
+    color: white;
+    border-radius: 10px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 6px;
+}
+
+button {
+    cursor: pointer;
+    padding: 20px;
+    font-size: 20px;
+    gap: 7px;
+    border-radius: 20px;
+}
+
+button:hover {
+    animation: jump 0.5s ease-in-out;
+}
+
+.symbol {
+    background-color: orangered;
+    color: white;
+}
+
+.symbol:hover {
+    background-color: white;
+    color: black;
+}
+
+.clear {
+    background-color: rgb(39, 134, 250);
+    color: white;
+}
+
+.clear:hover {
+    background-color: white;
+    color: black;
+}
+
+.equals {
+    grid-column: span 2;
+    background-color: orangered;
+    color: white;
+}
+
+.equals:hover {
+    background-color: white;
+    color: black;
+}
+
+.backspace {
+    grid-column: span 2;
+    background-color: orangered;
+    color: white;
+}
+
+.backspace:hover {
+    background-color: white;
+    color: black;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+th, tr, td{
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
