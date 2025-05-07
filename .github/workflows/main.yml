@@ -21,11 +21,12 @@ jobs:
         run: npm run build
 
       - name: Copy the files to server
-        uses: appleboy/scp-action@v1.0.0
+        uses: nogsantos/scp-deploy@master
         with:
-          host: 43.204.111.194
-          username: ubuntu
-          password: SHA256:YGKwyBfsHR9f5flwLakZpJpP5BAUyMyGfhIWIGwmfBk.
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
           source: 'dist/*'
           target: '/var/www/html/'
 
