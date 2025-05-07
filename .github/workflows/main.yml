@@ -23,11 +23,11 @@ jobs:
       - name: Copy the files to server
         uses: appleboy/scp-action@v1.0.0
         with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SERVER_SSH_KEY }}
+          host: 13.201.101.208
+          username: ubuntu
+          password: ubuntu
           source: 'dist/*'
           target: '/var/www/html/'
 
       - name: Restart Apache server
-        run: ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "sudo systemctl restart apache2"
+        run: ssh ubuntu@13.201.101.208 "sudo systemctl restart apache2"
