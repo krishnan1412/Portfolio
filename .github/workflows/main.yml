@@ -1,35 +1,21 @@
-name: Deploy
-on: push
+on:
+  push:
+    branches:
+      -main
 
-jobs:  
-  deploy:
-    runs-on: ubuntu-latest
+jobs:
+  run_pull:
+  name: run pull
+  runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build the React app
-        run: npm run build
-
-      - name: Copy the files to server
-        uses: nogsantos/scp-deploy@master
-        with:
-          src: ./dist/*
-          host: ${{ secrets.SSH_HOST }}
-          remote: ${{ secrets.SSH_DIR }}
-          port: ${{ secrets.SSH_PORT }}
-          user: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          # target: '/var/www/html/'
-
-      - name: Restart Apache server
-        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "sudo systemctl restart apache2"
+  steps:
+  -name: install ssh keys
+    run:
+    install -m 600 -D /dev/null ~/.ssh/id_rsa
+    echo"${{secrets.SSH_PRIVATEKEY}}"> ~/.ssh/id_rsa
+    ssh-keyscan -H ${{secrets.SSH_HOST}} > ~/.ssh/known_hosts
+  -name: connect and pull
+    run: ssh ${{secrets.SSH_USERR}}@${{secrets.SSH_HOST}}"cd ${{secrets.WORK_DIR}} && git checkout ${{secrets.MAIN_BRANCH}} && git pull
+  -name: cleanup
+  run: rm -rf ~/.ssh
+  
