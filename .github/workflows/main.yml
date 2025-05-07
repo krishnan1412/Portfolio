@@ -28,7 +28,7 @@ jobs:
           remote: ${{ secrets.SSH_DIR }}
           port: ${{ secrets.SSH_PORT }}
           user: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
+          password: ${{ secrets.SSH_password }}
           # target: '/var/www/html/'
 
       - name: Restart Apache server
