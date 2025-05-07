@@ -23,9 +23,9 @@ jobs:
       - name: Copy the files to server
         uses: appleboy/scp-action@v1.0.0
         with:
-          host: 13.201.101.208
+          host: 43.204.111.194
           username: ubuntu
-          password: ubuntu
+          password: SHA256:YGKwyBfsHR9f5flwLakZpJpP5BAUyMyGfhIWIGwmfBk.
           source: 'dist/*'
           target: '/var/www/html/'
 
