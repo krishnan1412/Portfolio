@@ -31,4 +31,4 @@ jobs:
           target: '/var/www/html/'
 
       - name: Restart Apache server
-        run: ssh ubuntu@13.201.101.208 "sudo systemctl restart apache2"
+        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "sudo systemctl restart apache2"
