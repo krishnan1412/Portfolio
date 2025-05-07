@@ -24,11 +24,12 @@ jobs:
         uses: nogsantos/scp-deploy@master
         with:
           host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
+          user: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
+          remote: ${{ secrets.SSH_DIR }}
           source: 'dist/*'
-          target: '/var/www/html/'
+          # target: '/var/www/html/'
 
       - name: Restart Apache server
         run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "sudo systemctl restart apache2"
