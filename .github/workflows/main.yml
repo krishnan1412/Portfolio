@@ -27,7 +27,7 @@ jobs:
           username: ubuntu
           password: ${{ secrets.SERVER_PASSWORD }}
           source: 'build/*'
-          target: '/var/www/html'
+          target: '/var/www/html/'
 
       - name: Restart Apache server
         run: ssh ubuntu@13.203.220.191 "sudo systemctl restart apache2"
