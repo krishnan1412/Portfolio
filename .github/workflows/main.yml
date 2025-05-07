@@ -1,18 +1,18 @@
 name: Deploy
 on: push
 
- jobs:  
-   deploy:
-     runs-on: ubuntu-lateest
+jobs:  
+  deploy:
+    runs-on: ubuntu-latest
 
-     steps:
-     - name: checkout repository
-       uses: actions/checkout@v3
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-       name: Install Node.js
-       uses: actions/setup-node@v3
-       with:
-         node-version: '18'
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
 
       - name: Install dependencies
         run: npm install
@@ -29,5 +29,5 @@ on: push
           source: 'build/*'
           target: '/var/www/html'
 
-        name: Restart Apache server
-        run: ssh ${{ secrets.SERVER_USER}} @$ {{ secrets.SERVER_HOST}} "sudo systemctl restart apache2"
+      - name: Restart Apache server
+        run: ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "sudo systemctl restart apache2"
