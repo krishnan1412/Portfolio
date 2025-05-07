@@ -23,12 +23,12 @@ jobs:
       - name: Copy the files to server
         uses: nogsantos/scp-deploy@master
         with:
+          src: ./dist/*
           host: ${{ secrets.SSH_HOST }}
+          remote: ${{ secrets.SSH_DIR }}
+          port: ${{ secrets.SSH_PORT }}
           user: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
-          port: ${{ secrets.SSH_PORT }}
-          remote: ${{ secrets.SSH_DIR }}
-          source: 'dist/*'
           # target: '/var/www/html/'
 
       - name: Restart Apache server
