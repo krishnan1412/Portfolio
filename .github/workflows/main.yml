@@ -25,7 +25,7 @@ jobs:
         with:
           src: ./dist/*
           host: ${{ secrets.HOST }}
-          remote: ${{ secrets.DIR }}
+          remote: /var/www/html/
           port: ${{ secrets.PORT }}
           user: ${{ secrets.USER }}
           key: ${{ secrets.KEY }}
