@@ -15,7 +15,7 @@ header ul li {
 /*   @apply bg-gradient-to-br from-[#84C350] to-[#bcf390]; */
 }
 .bg-secondary{
-  background: darkpink;  
+  background: pink;  
 /*   @apply bg-gradient-to-tr from-[#F4990F] to-[#f1d19b]; */
 }
 .mobile-nav{
