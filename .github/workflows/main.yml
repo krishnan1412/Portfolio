@@ -1,23 +1,33 @@
-on:
-  push:
-    branches:
-      - main
+name: Deploy
+on: push
 
-jobs:
-  run_pull:
-    name: Run Pull
+jobs:  
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Install SSH keys
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATEKEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Connect and pull
-        run: ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && git checkout ${{ secrets.MAIN_BRANCH }} && git pull"
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
 
-      - name: Cleanup
-        run: rm -rf ~/.ssh
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the React app
+        run: npm run build
+
+      - name: Copy the files to server
+        uses: appleboy/scp-action@main
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_KEY }}
+          source: 'dist/*'
+          target: '/var/www/html'
+
+      - name: Restart Apache server
+        run: ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "sudo systemctl restart apache2"
