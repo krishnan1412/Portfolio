@@ -10,12 +10,12 @@ header ul li {
   @apply px-2;
 }
 .bg-primary{
-  background: "purple";
+  background: purple;
   
 /*   @apply bg-gradient-to-br from-[#84C350] to-[#bcf390]; */
 }
 .bg-secondary{
-  background: "dark pink";  
+  background: darkpink;  
 /*   @apply bg-gradient-to-tr from-[#F4990F] to-[#f1d19b]; */
 }
 .mobile-nav{
