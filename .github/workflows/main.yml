@@ -31,4 +31,4 @@ jobs:
           key: ${{ secrets.KEY }}
 
       - name: Restart Apache server
-        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "sudo systemctl restart apache2"
+        run: ssh ${{ secrets.USER }}@${{ secrets.HOST }} "sudo systemctl restart apache2"
