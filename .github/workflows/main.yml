@@ -21,13 +21,14 @@ jobs:
         run: npm run build
 
       - name: Copy the files to server
-        uses: appleboy/scp-action@v1.0.0
+        uses: nogsantos/scp-deploy@master
         with:
+          src: ./dist/*
           host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          password: ${{ secrets.SSH_KEY }}
-          source: 'dist/*'
-          target: '/var/www/html/'
+          remote: ${{ secrets.SSH_DIR }}
+          port: ${{ secrets.SSH_PORT }}
+          user: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
 
       - name: Restart Apache server
         run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "sudo systemctl restart apache2"
