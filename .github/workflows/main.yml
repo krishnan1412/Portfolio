@@ -12,7 +12,7 @@ jobs:
       - name: setup SSH connection
         run: |
           mkdir -p ~/.ssh
-          echo "${{secrets.key}}">~/.ssh/id_rsa
+          echo "${{secrets.KEY}}">~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H ${{secrets.HOST}} >> ~/.ssh/known_hosts
           cat ~/.ssh/known_hosts
