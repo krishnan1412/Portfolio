@@ -32,6 +32,6 @@ jobs:
       - name: Build the React app
         run: npm run build
 
-      - name: Restart Apache server
+      - name: Restart nginx server
         run: |
-          sudo systemctl restart apache2
+          sudo systemctl restart nginx
