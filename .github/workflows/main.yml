@@ -32,6 +32,16 @@ jobs:
       - name: Build the React app
         run: npm run build
 
+      - name: Copy the files to server
+        uses: nogsantos/scp-deploy@master
+        with:
+          src: dist/*
+          host: ${{ secrets.HOST }}
+          remote: /var/www/html
+          port: ${{ secrets.PORT }}
+          user: ${{ secrets.USER }}
+          key: ${{ secrets.KEY }}
+
       - name: Restart nginx server
         run: |
           sudo systemctl restart nginx
