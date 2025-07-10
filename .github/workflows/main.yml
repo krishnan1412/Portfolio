@@ -19,7 +19,7 @@ jobs:
 
       - name: Deploy via SSH
         run: |
-          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{secrets.USER}}@$${{secrets.HOST}} 
+          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{secrets.USER}}@${{secrets.HOST}} 
 
       - name: Install Node.js
         uses: actions/setup-node@v3
