@@ -6,7 +6,7 @@ export const About = () => {
     <>
     <section className='flex flex-col md:flex-row bg-primary px-5 py-5' id='about'>
         <div className='md:w-1/2 py-5 animate-zoomIn timeline '>
-            <img src=https://simplelearningbuckets.s3.us-east-1.amazonaws.com/about.png />
+            <img src="https://simplelearningbuckets.s3.us-east-1.amazonaws.com/about.png" />
         </div>
         <div className='w-full md:w-1/2 flex  justify-center'>
             <div className='flex flex-col justify-center text-white'>
