@@ -1,6 +1,6 @@
 import websiteImg1 from 'https://simplelearningbuckets.s3.us-east-1.amazonaws.com/ecommerce-websites.jpg'
 import websiteImg2 from 'https://simplelearningbuckets.s3.us-east-1.amazonaws.com/food-ecommerce.jpg'
-import websiteImg3 from 'https://simplelearningbuckets.s3.us-east-1.amazonaws.com/website-blog.jpgg'
+import websiteImg3 from 'https://simplelearningbuckets.s3.us-east-1.amazonaws.com/website-blog.jpg'
 
 
 
