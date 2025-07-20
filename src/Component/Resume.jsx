@@ -1,4 +1,4 @@
-import ResumeImg from '/images/resume.jpg'
+// import ResumeImg from '/images/resume.jpg'
 
 export const Resume = () => {
 const config = {
@@ -9,7 +9,7 @@ const config = {
     <>
     <section className='flex flex-col md:flex-row bg-primary px-5 py-5 ' id='resume'>
             <div className='md:w-1/2 py-5 flex justify-center md:justify-end animate__animated animate__rotateIn transition delay-[50s] timeline'>
-                <img className='w-[300px]' src={ResumeImg} />
+                <img className='w-[300px]' src=https://simplelearningbuckets.s3.us-east-1.amazonaws.com/resume.jpg />
             </div>
             <div className='w-full md:w-1/2 flex  justify-center'>
                 <div className='flex flex-col justify-center text-white '>
