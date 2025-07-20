@@ -1,4 +1,4 @@
-import HeroImg from '/images/hero.png'
+// import HeroImg from '/images/hero.png'
 import { AiOutlineTwitter, AiOutlineLinkedin, AiOutlineInstagram  } from "react-icons/ai";
 // import { MdOutlineFacebook } from "react-icons/md";
 
@@ -19,7 +19,7 @@ export const Hero = () => {
             <a className='hover:text-white cursor-pointer' href="https://www.linkedin.com/in/krishnan-u-aab88623b/" target='_blank'><AiOutlineLinkedin size={40} /></a>
         </div>
         </div>
-        <img className='md:w-1/3 animate-rotateIn' src={HeroImg} />
+        <img className='md:w-1/3 animate-rotateIn' src=https://simplelearningbuckets.s3.us-east-1.amazonaws.com/hero.png />
     </section>
     </>
   )
