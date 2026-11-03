@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gopalakrishnan U – DevOps Engineer for Freelance Projects</title>
+<meta name="description" content="Freelance DevOps engineer: AWS, Terraform, Kubernetes, Docker and CI/CD pipelines.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#eef2f6;--surface:#fff;--ink:#14213d;--muted:#52607a;--line:#cfd8e3;--blue:#2f5bea;--ok:#1a8f63;--on-blue:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1626;--surface:#172138;--ink:#e8edf6;--muted:#9aa8c2;--line:#2a3856;--blue:#7f9cff;--ok:#4cd39b;--on-blue:#0f1626}}
+:root[data-theme="dark"]{--bg:#0f1626;--surface:#172138;--ink:#e8edf6;--muted:#9aa8c2;--line:#2a3856;--blue:#7f9cff;--ok:#4cd39b;--on-blue:#0f1626}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Figtree,system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",Figtree,sans-serif;line-height:1.1;margin:0;letter-spacing:-.02em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+header.nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.nav b{font-family:"Bricolage Grotesque",sans-serif;font-size:19px}
+.nav nav{display:flex;gap:22px;font-size:15px}
+.nav nav a{text-decoration:none;color:var(--muted)}
+.nav nav a:hover{color:var(--ink)}
+.hero{padding:56px 0 72px}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600;color:var(--ok)}
+.status i{width:9px;height:9px;border-radius:50%;background:var(--ok)}
+h1{font-size:clamp(40px,7vw,76px);font-weight:800;margin:18px 0 20px;max-width:15ch}
+.lead{font-size:20px;color:var(--muted);max-width:56ch;margin:0 0 30px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 22px;border-radius:8px;font-weight:600;text-decoration:none;border:2px solid var(--blue)}
+.btn.p{background:var(--blue);color:var(--on-blue)}
+.btn.s{color:var(--ink);border-color:var(--line)}
+.pipe{margin-top:56px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px;overflow-x:auto}
+.pipe h2{font-size:15px;font-weight:600;color:var(--muted);font-family:Figtree,sans-serif;letter-spacing:0;margin-bottom:16px}
+.stages{display:flex;gap:0;min-width:640px}
+.stage{flex:1;position:relative;padding:14px 12px 0 0}
+.stage::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--line);border-radius:2px}
+.stage::after{content:"";position:absolute;top:0;left:0;height:4px;width:0;background:var(--ok);border-radius:2px;animation:fill .9s ease forwards;animation-delay:calc(var(--i)*.8s + .4s)}
+@keyframes fill{to{width:100%}}
+.stage b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:18px}
+.stage span{font-size:14px;color:var(--muted)}
+section{padding:72px 0;border-top:1px solid var(--line)}
+section>.wrap>h2{font-size:clamp(30px,4.5vw,44px);margin-bottom:12px}
+.sub{color:var(--muted);max-width:60ch;margin:0 0 36px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:24px}
+.card h3{font-size:22px;margin-bottom:10px}
+.card p{margin:0;color:var(--muted);font-size:16px}
+.proj{display:grid;grid-template-columns:1fr 2fr;gap:28px;padding:28px 0;border-top:1px solid var(--line)}
+.proj:first-of-type{border-top:0;padding-top:0}
+.proj h3{font-size:26px;margin-bottom:8px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.tags li{font-size:13px;font-weight:600;padding:3px 10px;border-radius:99px;border:1px solid var(--line);color:var(--muted)}
+.proj ul.pts{margin:0;padding-left:20px}
+.proj ul.pts li{margin-bottom:8px}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px 32px}
+.skills h3{font-size:18px;margin-bottom:8px}
+.skills p{margin:0;color:var(--muted);font-size:16px}
+.job{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.job h3{font-size:24px}
+.job span{color:var(--muted)}
+.job-list{margin:16px 0 0;padding-left:20px;max-width:70ch}
+.job-list li{margin-bottom:6px}
+.contact{text-align:left}
+.contact a.big{display:inline-block;font:700 clamp(24px,5vw,44px)/1.2 "Bricolage Grotesque",sans-serif;color:var(--blue);word-break:break-all}
+footer{padding:28px 0 40px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+.herogrid{display:grid;grid-template-columns:1fr 280px;gap:48px;align-items:center}
+.photo{position:relative;width:280px;aspect-ratio:4/5;border-radius:14px;overflow:hidden;background:var(--surface);border:1px solid var(--line);display:grid;place-items:center;font:800 72px "Bricolage Grotesque",sans-serif;color:var(--blue)}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media (max-width:860px){.herogrid{grid-template-columns:1fr}.photo{width:200px;order:-1}}
+@media (max-width:720px){.proj{grid-template-columns:1fr;gap:14px}.nav nav{gap:14px;font-size:14px}.nav nav a.hide{display:none}}
+@media (prefers-reduced-motion:reduce){.stage::after{animation:none;width:100%}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="nav"><b>Gopalakrishnan U</b>
+<nav aria-label="Main"><a href="#services" class="hide">Services</a><a href="#projects">Projects</a><a href="#skills" class="hide">Skills</a><a href="#contact">Contact</a></nav></header>
+
+<main>
+<div class="hero">
+<div class="herogrid"><div><span class="status"><i></i>Available for freelance projects</span>
+<h1>DevOps engineer who ships your AWS infrastructure safely.</h1>
+<p class="lead">I build cloud infrastructure with Terraform, automate releases with CI/CD pipelines, and run containers on Kubernetes and ECS, so your team can deploy often and sleep well.</p>
+<div class="btns"><a class="btn p" href="mailto:Krishnan27roman@gmail.com?subject=Freelance%20DevOps%20project">Hire me for a project</a><a class="btn s" href="#projects">See my work</a></div></div>
+<div class="photo" aria-label="Photo of Gopalakrishnan Umapathi">GU<img src="Gopal.png" alt="Gopalakrishnan U" onerror="this.remove()"></div></div>
+
+<div class="pipe" role="img" aria-label="Pipeline stages: commit, build, test, scan, push, deploy, monitor">
+<h2>How I ship: every change goes through the same automated pipeline</h2>
+<div class="stages">
+<div class="stage" style="--i:0"><b>Commit</b><span>Git, GitHub</span></div>
+<div class="stage" style="--i:1"><b>Build</b><span>Docker</span></div>
+<div class="stage" style="--i:2"><b>Test &amp; scan</b><span>SonarQube</span></div>
+<div class="stage" style="--i:3"><b>Push</b><span>ECR, Docker Hub</span></div>
+<div class="stage" style="--i:4"><b>Deploy</b><span>ECS, EKS</span></div>
+<div class="stage" style="--i:5"><b>Observe</b><span>Prometheus, Grafana</span></div>
+</div></div>
+</div>
+
+<section id="services"><div class="wrap">
+<h2>What I can do for you</h2>
+<p class="sub">Clear scope, working automation, and documentation your team can pick up.</p>
+<div class="grid">
+<div class="card"><h3>AWS infrastructure</h3><p>Secure, scalable setups using EC2, VPC, ALB, RDS, S3, CloudFront and IAM, designed with least-privilege access.</p></div>
+<div class="card"><h3>Infrastructure as Code</h3><p>Repeatable environments written in Terraform, including Databricks infrastructure, so nothing depends on manual clicks.</p></div>
+<div class="card"><h3>CI/CD pipelines</h3><p>Automated build, test and deploy workflows in Jenkins, GitHub Actions or GitLab CI/CD.</p></div>
+<div class="card"><h3>Containers &amp; orchestration</h3><p>Dockerised applications running on Kubernetes (EKS), ECS with Fargate, or Docker Compose.</p></div>
+<div class="card"><h3>Monitoring &amp; reliability</h3><p>Dashboards and alerts with Prometheus, Grafana and CloudWatch, plus backup and disaster recovery planning.</p></div>
+<div class="card"><h3>Production support</h3><p>Troubleshooting deployments and working with your developers to improve release quality.</p></div>
+</div></div></section>
+
+<section id="projects"><div class="wrap">
+<h2>Selected projects</h2>
+<p class="sub">Hands-on builds that show how I design, automate and deploy.</p>
+
+<div class="proj"><div><h3>Serverless backend</h3>
+<ul class="tags"><li>Lambda</li><li>API Gateway</li><li>Cognito</li><li>DynamoDB</li><li>GitOps</li></ul></div>
+<ul class="pts"><li>Event-driven backend on AWS Lambda and API Gateway with no servers to manage.</li>
+<li>Sign-up, sign-in and access control through Amazon Cognito with token-based authentication.</li>
+<li>DynamoDB for fast, highly available storage.</li>
+<li>CI/CD pipeline following GitOps principles for version-controlled, automated deployments across environments.</li></ul></div>
+
+<div class="proj"><div><h3>Cloudfix: containers on ECS Fargate</h3>
+<ul class="tags"><li>Docker</li><li>Nginx</li><li>GitHub Actions</li><li>ECR</li><li>ECS</li><li>ALB</li></ul></div>
+<ul class="pts"><li>Static web app packaged with Docker and served through Nginx.</li>
+<li>GitHub Actions workflow for automated build, test and deployment.</li>
+<li>Images stored in Amazon ECR and run on ECS with Fargate, with no EC2 instances to manage.</li>
+<li>Application Load Balancer spreading traffic across containers for availability.</li></ul></div>
+
+<div class="proj"><div><h3>WhatsApp Automation: Jenkins pipeline</h3>
+<ul class="tags"><li>Docker</li><li>Traefik</li><li>Jenkins</li><li>SonarQube</li><li>Docker Compose</li></ul></div>
+<ul class="pts"><li>Dockerised app served through Traefik and managed as multiple containers with Docker Compose.</li>
+<li>Jenkins pipeline for automated build, test and deployment, with images pushed to Docker Hub.</li>
+<li>SonarQube checks inside the pipeline to enforce code quality on every build.</li></ul></div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+<h2>Tools I work with</h2>
+<p class="sub">&nbsp;</p>
+<div class="skills">
+<div><h3>Cloud</h3><p>AWS: EC2, ECS, EKS, VPC, ALB, CloudFront, RDS, DynamoDB, S3, ECR, IAM, CloudTrail, API Gateway</p></div>
+<div><h3>Containers</h3><p>Docker, Docker Compose, Kubernetes (EKS)</p></div>
+<div><h3>Infrastructure as Code</h3><p>Terraform</p></div>
+<div><h3>CI/CD</h3><p>Jenkins, GitHub Actions, GitLab CI/CD</p></div>
+<div><h3>Monitoring</h3><p>Prometheus, Grafana, CloudWatch</p></div>
+<div><h3>Code &amp; systems</h3><p>Git, GitHub, Linux, Bash, SonarQube</p></div>
+</div></div></section>
+
+<section id="experience"><div class="wrap">
+<h2>Experience</h2>
+<p class="sub">&nbsp;</p>
+<div class="job"><h3>DevOps Engineer, Algorithm Alchemy Tech</h3><span>March 2026 – Present</span></div>
+<ul class="job-list">
+<li>Designed and managed secure, scalable cloud infrastructure on AWS.</li>
+<li>Provisioned Databricks infrastructure and automated provisioning with Terraform.</li>
+<li>Built CI/CD pipelines with Jenkins, GitHub Actions and GitLab CI/CD.</li>
+<li>Deployed containerised applications with Docker and Kubernetes.</li>
+<li>Implemented monitoring, security, backup and disaster recovery solutions.</li>
+<li>Worked with development teams to streamline deployments and improve release quality.</li>
+</ul>
+<p class="sub" style="margin-top:28px">Education: Bachelor of Mathematics, Thiruvalluvar University</p>
+</div></section>
+
+<section id="contact"><div class="wrap contact">
+<h2>Let’s talk about your project</h2>
+<p class="sub">Tell me what you are building and where deployments hurt today. I will reply with how I would approach it.</p>
+<a class="big" href="mailto:Krishnan27roman@gmail.com?subject=Freelance%20DevOps%20project">Krishnan27roman@gmail.com</a>
+<p style="margin-top:14px">Phone / WhatsApp: <a href="tel:+916384668811">+91 6384668811</a></p>
+</div></section>
+</main>
+
+<footer><div class="wrap">© 2026 Gopalakrishnan U. Based in India, working with clients remotely.</div></footer>
+</div>
+</body>
+</html>
